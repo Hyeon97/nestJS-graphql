@@ -1,7 +1,16 @@
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo'
 import { Module } from '@nestjs/common'
+import { GraphQLModule } from '@nestjs/graphql'
+import { StarbucksModule } from './api/starbucks/starbucks.module'
 
 @Module({
-  imports: [],
+  imports: [
+    StarbucksModule,
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      autoSchemaFile: 'src/commons/graphql/schema.gql',
+    }),
+  ],
   controllers: [],
   providers: [],
 })
