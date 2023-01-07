@@ -8,8 +8,8 @@ export class StarbucksResolver {
   constructor(private readonly starbucksService: StarbucksService) {}
 
   @Query(() => [Menu])
-  fetchBoards() {
-    return ''
+  getStarbucksMenu() {
+    return this.starbucksService.findAll()
   }
 
   @Mutation(() => String) // 해당 함수의 return type === string

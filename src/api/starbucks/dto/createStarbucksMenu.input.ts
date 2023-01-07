@@ -1,5 +1,7 @@
 import { Field, Int, InputType } from '@nestjs/graphql'
 
+// 사용자에게 입력받을 타입 지정
+
 @InputType() // graphql
 export class CreateStarbucksMenuInput {
   @Field(() => String) // graphql

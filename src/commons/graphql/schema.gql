@@ -14,7 +14,7 @@ type Menu {
 }
 
 type Query {
-  fetchBoards: [Menu!]!
+  getStarbucksMenu: [Menu!]!
 }
 
 type Mutation {
